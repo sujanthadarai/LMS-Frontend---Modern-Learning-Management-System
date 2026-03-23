@@ -224,7 +224,7 @@ const getSpeakerAvatarUrl = (speaker?: EventSpeaker) => {
     if (speaker.avatar_url.startsWith('http')) {
       return speaker.avatar_url;
     } else {
-      return `https://sipalaya-lms-professional-learning.onrender.com/${speaker.avatar_url}`;
+      return `https://sipalaya-lms-professional-learning.onrender.com${speaker.avatar_url}`;
     }
   }
   
@@ -854,9 +854,9 @@ const Events = () => {
   // Test API endpoints
   const testApiEndpoints = async () => {
     const endpoints = [
-      { name: 'Events', url: 'https://sipalaya-lms-professional-learning.onrender.com//api/events/events/' },
-      { name: 'Event Types', url: 'https://sipalaya-lms-professional-learning.onrender.com//api/events/event-types/' },
-      { name: 'Registrations', url: 'https://sipalaya-lms-professional-learning.onrender.com//api/events/event-registrations/' },
+      { name: 'Events', url: 'https://sipalaya-lms-professional-learning.onrender.com/api/events/events/' },
+      { name: 'Event Types', url: 'https://sipalaya-lms-professional-learning.onrender.com/api/events/event-types/' },
+      { name: 'Registrations', url: 'https://sipalaya-lms-professional-learning.onrender.com/api/events/event-registrations/' },
     ];
     
     const results: Record<string, boolean> = {};
@@ -1164,7 +1164,7 @@ const handleFormRegistration = async (formData: any) => {
 
     console.log('Sending:', registrationData);
 
-    const response = await fetch('https://sipalaya-lms-professional-learning.onrender.com//api/events/event-registrations/', {
+    const response = await fetch('https://sipalaya-lms-professional-learning.onrender.com/api/events/event-registrations/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1226,7 +1226,7 @@ const handleFormRegistration = async (formData: any) => {
   const checkRegistrationStatus = async (eventId: number, email: string) => {
     try {
       const response = await fetch(
-        `https://sipalaya-lms-professional-learning.onrender.com//api/events/event-registrations/check/?event=${eventId}&email=${encodeURIComponent(email)}`
+        `https://sipalaya-lms-professional-learning.onrender.com/api/events/event-registrations/check/?event=${eventId}&email=${encodeURIComponent(email)}`
       );
       
       if (response.ok) {

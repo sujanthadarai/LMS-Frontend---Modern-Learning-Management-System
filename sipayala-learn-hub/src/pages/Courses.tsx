@@ -102,8 +102,8 @@ const fixImageUrl = (url?: string | null): string => {
   if (!url) return "https://placehold.co/400x225/1e293b/94a3b8?text=Course";
   const clean = url.replace(/([^:])\/\//g, "$1/");
   if (clean.startsWith("http://") || clean.startsWith("https://")) return clean;
-  if (clean.startsWith("/")) return `http://https://sipalaya-lms-professional-learning.onrender.com${clean}`;
-  return `http://https://sipalaya-lms-professional-learning.onrender.com/media/${clean}`;
+  if (clean.startsWith("/")) return `https://sipalaya-lms-professional-learning.onrender.com${clean}`;
+  return `https://sipalaya-lms-professional-learning.onrender.com/media/${clean}`;
 };
 
 const normalizeArray = <T,>(res: unknown, keys = ["results", "data", "courses", "categories"]): T[] => {
@@ -189,7 +189,7 @@ const Courses = () => {
   // ── API availability ──────────────────────────────────────────────────────────
   const checkApi = useCallback(async () => {
     try {
-      const r = await fetch("http://https://sipalaya-lms-professional-learning.onrender.com/api/courses/courses/", {
+      const r = await fetch("https://sipalaya-lms-professional-learning.onrender.com/api/courses/courses/", {
         method: "HEAD",
         headers: { Accept: "application/json" },
       });

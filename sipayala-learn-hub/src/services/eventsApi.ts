@@ -1,5 +1,5 @@
 // src/services/eventsApi.ts - COMPLETE FIXED VERSION
-const API_BASE_URL = 'https://sipalaya-lms-professional-learning.onrender.com/';
+const API_BASE_URL = 'https://sipalaya-lms-professional-learning.onrender.com';
 
 interface ApiParams {
   page?: number;
