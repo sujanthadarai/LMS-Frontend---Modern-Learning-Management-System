@@ -63,6 +63,11 @@ export default defineConfig(({ mode }) => ({
         pure_funcs: mode === 'production' ? ['console.log', 'console.error', 'console.warn'] : [],
       },
     },
+    // CommonJS options for better compatibility
+    commonjsOptions: {
+      transformMixedEsModules: true,
+      include: [/node_modules/],
+    },
     // Rollup options for better chunk splitting
     rollupOptions: {
       output: {
@@ -76,7 +81,7 @@ export default defineConfig(({ mode }) => ({
             '@radix-ui/react-toast',
             'framer-motion'
           ],
-          'chart-vendor': ['recharts', 'three', '@react-three/fiber', '@react-three/drei'],
+          'three-vendor': ['three', '@react-three/fiber', '@react-three/drei'],
           'state-vendor': ['@reduxjs/toolkit', 'react-redux', '@tanstack/react-query'],
           'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
         },
@@ -86,8 +91,8 @@ export default defineConfig(({ mode }) => ({
         assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
-    // Increase chunk size warning limit
-    chunkSizeWarningLimit: 1000,
+    // Increase chunk size warning limit for Three.js
+    chunkSizeWarningLimit: 2000,
     // Target modern browsers
     target: 'es2020',
     // Enable CSS code splitting
@@ -113,8 +118,14 @@ export default defineConfig(({ mode }) => ({
       '@tanstack/react-query',
       'framer-motion',
       'lucide-react',
+      'three',
+      '@react-three/fiber',
+      '@react-three/drei',
     ],
     exclude: [],
+    esbuildOptions: {
+      target: 'es2020',
+    },
   },
   
   // Define global constants
@@ -140,5 +151,12 @@ export default defineConfig(({ mode }) => ({
     drop: mode === 'production' ? ['console', 'debugger'] : [],
     // Enable JSX improvements
     jsx: 'automatic',
+    // Target for esbuild
+    target: 'es2020',
+  },
+  
+  // Worker configuration for Three.js
+  worker: {
+    format: 'es',
   },
 }));
