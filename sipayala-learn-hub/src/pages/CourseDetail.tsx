@@ -315,11 +315,11 @@ const fixImageUrl = (imageUrl?: string | null): string => {
   
   // If it starts with /media or /uploads, prepend base URL
   if (cleanUrl.startsWith('/media') || cleanUrl.startsWith('/uploads')) {
-    return `http://127.0.0.1:8000${cleanUrl}`;
+    return `https://sipalaya-lms-professional-learning.onrender.com/${cleanUrl}`;
   }
   
   // Default case
-  return `http://127.0.0.1:8000/media/${cleanUrl.replace(/^\/+/, '')}`;
+  return `https://sipalaya-lms-professional-learning.onrender.com//media/${cleanUrl.replace(/^\/+/, '')}`;
 };
 
 const formatDuration = (minutes: number): string => {

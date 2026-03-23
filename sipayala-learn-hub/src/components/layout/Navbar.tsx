@@ -17,7 +17,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Dialog, DialogContent, DialogPortal, DialogOverlay } from "@/components/ui/dialog";
 import { useToast } from "@/components/ui/use-toast";
 
-const API_BASE = "http://127.0.0.1:8000/api";
+const API_BASE = "https://sipalaya-lms-professional-learning.onrender.com/api";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface UserData {

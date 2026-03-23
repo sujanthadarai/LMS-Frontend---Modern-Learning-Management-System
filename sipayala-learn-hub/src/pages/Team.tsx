@@ -824,7 +824,7 @@ const Team = () => {
   const blobParallax = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/team/", { method: "HEAD" })
+    fetch("https://sipalaya-lms-professional-learning.onrender.com/", { method: "HEAD" })
       .then(r => setApiAvailable(r.ok)).catch(() => setApiAvailable(false));
   }, []);
 

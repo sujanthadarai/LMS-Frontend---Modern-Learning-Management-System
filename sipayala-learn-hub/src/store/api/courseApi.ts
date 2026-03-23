@@ -104,7 +104,7 @@ export interface FilterParams {
 export const courseApi = createApi({
   reducerPath: 'courseApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://127.0.0.1:8000/api/', // Your Django backend
+    baseUrl: 'https://sipalaya-lms-professional-learning.onrender.com/', // Your Django backend
     prepareHeaders: (headers) => {
       const token = localStorage.getItem('access_token');
       if (token) {
