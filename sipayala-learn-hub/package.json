@@ -55,7 +55,6 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
-    "patch-package": "^8.0.1",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
@@ -101,7 +100,7 @@
     "three-mesh-bvh": "0.8.0"
   },
   "engines": {
-    "node": "24.x",
-    "npm": "10.x"
-  }
+  "node": ">=24",
+  "npm": ">=10"
+}
 }
