@@ -12,7 +12,6 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "vercel-build": "npm run build",
-    "postinstall": "patch-package"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
