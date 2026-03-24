@@ -1,14 +1,20 @@
 {
+  "version": 2,
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "vite",
   "outputDirectory": "dist",
-  "regions": ["iad1"],
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "builds": [
@@ -19,5 +25,6 @@
         "distDir": "dist"
       }
     }
-  ]
+  ],
+  "regions": ["iad1"]
 }
