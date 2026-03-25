@@ -1,13 +1,4 @@
 {
   "version": 2,
-  "framework": "nextjs",
-  "buildCommand": "npm run build",
-  "installCommand": "npm install --legacy-peer-deps",
-  "outputDirectory": "dist",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "framework": "nextjs"
 }
