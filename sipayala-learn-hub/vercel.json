@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "framework": "nextjs",
+  "framework": "vite",
     "installCommand": "npm install"
 
 }
